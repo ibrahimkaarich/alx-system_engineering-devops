@@ -1,2 +1,18 @@
 #!/bin/bash
-chmod 751 hello
+
+# Check if the file exists
+if [ -e "hello" ]; then
+  # Add execution permission for the owner
+  chmod u+x hello
+
+  # Add execution permission for the group owner
+  chmod g+x hello
+
+  # Add execution permission for other users
+  chmod o+x hello
+
+  echo "Execution permission added to the file 'hello' for the owner, group owner, and other users."
+else
+  echo "File 'hello' does not exist."
+fi
+
